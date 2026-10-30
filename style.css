@@ -1,0 +1,298 @@
+/* ========== COULEURS, POLICE, MARGES (à modifier ici) ========== */
+:root {
+  --rose: #ff65e7;
+  --rose-pale: #f39ed9;
+  --marine: #232f50;
+  --encre: #111111;
+  --blanc: #ffffff;
+  --ciel: #84c6fe;
+  --ciel-pale: #d8f2f8;
+  --orange: #fbc177;
+  --police: "DM Sans", system-ui, sans-serif;
+  --marge: clamp(2.5rem, 7vw, 5.75rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--police);
+  color: var(--encre);
+  background: var(--blanc);
+  line-height: 1.5;
+}
+
+img { display: block; max-width: 100%; }
+h1, h2, h3 { font-weight: 700; line-height: 0.9; }
+h2 { font-size: clamp(2.8rem, 7vw, 5rem); }
+
+/* Bouton rose arrondi, réutilisé partout */
+.bouton {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--rose);
+  color: var(--blanc);
+  font: 700 1.4rem var(--police);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+.bouton:hover { transform: translateY(-4px); }
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 3px solid var(--marine);
+  outline-offset: 3px;
+}
+
+/* ========== 1. EN-TÊTE ========== */
+.hero {
+  background: var(--rose);
+  color: var(--marine);
+  padding: var(--marge) var(--marge) 0;
+}
+
+.logo { display: flex; align-items: center; gap: 12px; font-size: 2rem; margin-bottom: 1.25rem; }
+.logo-forme { width: 40px; height: 40px; color: #000; flex-shrink: 0; }
+
+
+.hero-texte { display: flex; align-items: flex-end; gap: 2rem; margin-bottom: 2.5rem; }
+.hero h1 { flex: 65; font-size: clamp(3.5rem, 11vw, 9.3rem); line-height: 0.8; }
+.accroche { flex: 35; font-size: 1.5rem; }
+
+.hero-image {
+  position: relative;
+  height: 540px;
+  margin: 0 calc(-1 * var(--marge)); /* l'image va d'un bord à l'autre */
+}
+.hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; }
+
+.bouton-hero {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.9rem;
+}
+.bouton-hero:hover { transform: translate(-50%, calc(-50% - 4px)); }
+
+/* ========== 2. APERÇU + CARROUSEL ========== */
+.apercu { display: flex; align-items: center; gap: 2rem; padding: 5rem var(--marge); }
+
+.apercu-texte { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+.apercu h2 { color: var(--rose); }
+.apercu-texte p { font-size: 1.25rem; color: var(--marine); }
+
+.apercu-texte .pastille {
+  border: 3px solid var(--rose);
+  border-radius: 999px;
+  padding: 0.5rem 1.25rem;
+  color: var(--rose);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.apercu-texte .adresse { color: var(--rose); font-size: 1.5rem; font-weight: 700; }
+
+.carrousel { flex: 1; position: relative; aspect-ratio: 1 / 1; overflow: hidden; }
+.diapo { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
+.diapo.active { opacity: 1; }
+.diapo img { width: 100%; height: 100%; object-fit: cover; }
+
+.fleche {
+  position: absolute;
+  bottom: 24px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--rose);
+  color: var(--blanc);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.fleche-gauche { right: calc(50% + 6px); }
+.fleche-droite { left: calc(50% + 6px); }
+
+/* ========== 3. AGENDA ========== */
+.agenda {
+  background: linear-gradient(var(--ciel), var(--ciel-pale));
+  padding: 5.75rem var(--marge);
+  text-align: center;
+}
+.surtitre { color: var(--blanc); font-size: 2rem; margin-bottom: 1rem; }
+.agenda h2 { color: var(--blanc); margin-bottom: 4rem; }
+
+.cartes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.carte {
+  background: var(--blanc);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+.carte:hover, .carte:focus-within { transform: translateY(-4px); }
+.carte img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+
+.carte-contenu {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 1.9rem 1.25rem 1.5rem;
+}
+.carte h3 { color: var(--rose); font-size: 2.2rem; }
+.carte-date { font-size: 1.4rem; }
+
+.etiquette {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: var(--rose);
+  color: var(--blanc);
+  font-weight: 700;
+}
+
+.lien-details {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--rose);
+  font: 1.3rem var(--police);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* ========== 4. COMPTE À REBOURS ========== */
+.compte-a-rebours {
+  background: linear-gradient(var(--rose), var(--orange));
+  padding: 5.75rem var(--marge);
+  text-align: center;
+}
+.compte-a-rebours h2 { color: var(--blanc); margin-bottom: 3rem; }
+
+.compteur {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto 2.5rem;
+}
+
+.bloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem 0.9rem;
+  border-radius: 14px;
+  background: linear-gradient(var(--rose-pale), var(--blanc));
+}
+.nombre { font-size: clamp(3.5rem, 9vw, 8rem); font-weight: 700; line-height: 1.1; }
+.unite { font-size: clamp(1.1rem, 2vw, 2rem); text-transform: uppercase; letter-spacing: 1.5px; }
+
+.message-fin { color: var(--blanc); font-size: 2rem; font-weight: 700; margin-bottom: 2.5rem; }
+
+/* ========== 5. PIED DE PAGE ========== */
+footer {
+  background: var(--rose);
+  color: var(--blanc);
+  text-align: center;
+  padding: 3.75rem var(--marge);
+  font-size: 1.5rem;
+}
+
+/* ========== FENÊTRES (MODALES) ========== */
+.modale {
+  width: min(88vw, 800px);
+  max-height: 90vh;
+  margin: auto;
+  padding: 0;
+  border: none;
+  border-radius: 14px;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.modale::backdrop { background: rgba(0, 0, 0, 0.8); }
+
+.fermer {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--blanc);
+  color: var(--encre);
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+.modale-image { position: relative; height: 400px; }
+.modale-image img { width: 100%; height: 100%; object-fit: cover; }
+.modale-image::after {
+  content: "";
+  position: absolute;
+  inset: 20% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+}
+.modale-image h3 {
+  position: absolute;
+  left: 24px;
+  bottom: 24px;
+  z-index: 1;
+  color: var(--blanc);
+  font-size: clamp(2.5rem, 8vw, 6rem);
+}
+
+.modale-corps { padding: 2.75rem; }
+.modale-date { font-size: 1.8rem; margin-bottom: 1.25rem; }
+.modale-texte p { font-size: 1.25rem; line-height: 1.7; }
+
+/* Formulaire */
+.titre-formulaire { color: var(--rose); font-size: 2.5rem; margin-bottom: 1.5rem; }
+form { display: flex; flex-direction: column; gap: 0.4rem; }
+label { margin-top: 0.8rem; font-size: 1.2rem; font-weight: 700; }
+input, select { padding: 0.75rem; border: 1px solid #ccc; border-radius: 8px; font: 1.2rem var(--police); }
+form .bouton { align-self: flex-start; margin-top: 1.25rem; }
+
+/* ========== APPARITION AU DÉFILEMENT ========== */
+.js .apparition { opacity: 0; transform: translateY(32px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+.js .apparition.visible { opacity: 1; transform: none; }
+
+/* ========== VERSION TÉLÉPHONE ========== */
+@media (max-width: 767px) {
+  .hero-texte { flex-direction: column; align-items: flex-start; gap: 1.25rem; }
+  .hero h1, .accroche { flex: none; }
+  .hero-image { height: 360px; }
+
+  .apercu { flex-direction: column; padding: 2.5rem var(--marge); }
+  .carrousel { flex: none; width: 100%; }
+
+  .compteur { grid-template-columns: repeat(2, 1fr); }
+  .modale-image { height: 260px; }
+  .modale-corps { padding: 1.75rem; }
+}
+
+/* ========== MOINS D'ANIMATIONS SI LA PERSONNE L'A DEMANDÉ ========== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .apparition { opacity: 1; transform: none; transition: none; }
+  .diapo, .carte, .bouton { transition: none; }
+}

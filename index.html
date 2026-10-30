@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vélo'sition – Étage Voltaire</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ========== 1. EN-TÊTE ========== -->
+  <header class="hero">
+    <div class="logo">
+      <img src="images/logo.png" alt="">
+      <span>Etage Voltaire.</span>
+    </div>
+
+    <div class="hero-texte apparition">
+      <h1>Vélo'sition</h1>
+      <p class="accroche">Une exposition intimiste pour les amoureux.ses du vélo et de ce qu'il représente : liberté, créativité, évasion.</p>
+    </div>
+
+    <div class="hero-image">
+      <img src="images/hero.jpg" alt="[Décris l'image en quelques mots]">
+      <a href="#apercu" class="bouton bouton-hero">En savoir plus</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ========== 2. APERÇU + CARROUSEL ========== -->
+    <section id="apercu" class="apercu">
+      <div class="apercu-texte apparition">
+        <p class="pastille">9 au 22 novembre 2026</p>
+        <h2>Aperçu</h2>
+        <p>Sortir du vélo-sport, voire vélo-performance, et célébrer le tous.tes-à-vélo, toujours-vélo. Du vélo-matin à la vélo-balade, en vélo-mocassins, ou en vélib-couinant. Vélo-vélo-vélo.</p>
+        <p>Telle est l'ambition de la Vélo'sition, qui expose 22 œuvres soigneusement sélectionnées pour leur illustration des plus diverses de la pratique cycliste urbaine.</p>
+        <p class="adresse">ÉTAGE VOLTAIRE,<br>210 Bd Voltaire, Paris 11.</p>
+      </div>
+
+      <div class="carrousel apparition" aria-label="Aperçu des œuvres">
+        <div class="diapo active"><img src="images/expo-1.jpg" alt="[Description de l'œuvre 1]"></div>
+        <div class="diapo"><img src="images/expo-2.jpg" alt="[Description de l'œuvre 2]"></div>
+        <div class="diapo"><img src="images/expo-3.jpg" alt="[Description de l'œuvre 3]"></div>
+        <div class="diapo"><img src="images/expo-4.jpg" alt="Papy Daniel et moi à vélo"></div>
+
+        <button class="fleche fleche-gauche" type="button" aria-label="Image précédente">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="fleche fleche-droite" type="button" aria-label="Image suivante">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </section>
+
+    <!    <!-- ========== 3. AGENDA ========== -->
+    <section class="agenda">
+      <p class="surtitre">VÉLO'SITION 2026</p>
+      <h2>Agenda des évènements</h2>
+
+      <div class="cartes">
+        <!-- Carte 1 : vernissage -->
+        <article class="carte">
+          <img src="images/vernissage.jpg" alt="">
+          <div class="carte-contenu">
+            <h3>Vernissage</h3>
+            <p class="carte-date">9 novembre, à partir de 18h | Entrée libre</p>
+            <p class="etiquette">Discuter</p>
+            <button class="lien-details" type="button">En savoir plus</button>
+            <div class="details" hidden>
+              <p>Salomé, curatrice de l'exposition, animera les temps forts du vernissage. D'abord, une balade culturelle te permettra de découvrir les œuvres et de comprendre les questions qui ont guidé le montage de cette exposition. Ensuite, un atelier de création te sera proposé : tu seras invité.e à produire une œuvre libre, à partir des techniques du collage et de l'aquarelle. Tout le matériel sera mis à ta disposition.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 2 : sortie Vélib' -->
+        <article class="carte">
+          <img src="images/sortie-velib.jpg" alt="">
+          <div class="carte-contenu">
+            <h3>Sortie vélib'</h3>
+            <p class="carte-date">15 novembre, départ à 17h</p>
+            <p class="etiquette">Bouger</p>
+            <button class="lien-details" type="button">En savoir plus</button>
+            <div class="details" hidden>
+               <p>Une balade à vélo dans Paris, afin de (re)découvrir la pratique urbaine du vélo, et surtout de donner corps au sujet de l'exposition. Le parcours de 6 km, au départ de la station Vélib' située en face d'Étage Voltaire – au croisement de la rue Léon Frot et de l'impasse Delépine –, aux environs de 17h, permettra à tous.tes de participer.</p>
+              <p>Pas d'inscription, viens simplement avec ton vélo ou ton Pass Vélib'.</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 3 : atelier -->
+        <article class="carte">
+          <img src="images/atelier.jpg" alt="">
+          <div class="carte-contenu">
+            <h3>Atelier « Pimpe ton vélo »</h3>
+            <p class="carte-date">21 novembre, 14h | Sur inscription</p>
+            <p class="etiquette">Créer</p>
+            <button class="lien-details" type="button">En savoir plus</button>
+            <div class="details" hidden>
+              <p> Un atelier en petit comité, pour décorer, customiser et accessoiriser ton vélo : stickers sur le cadre, rubans sur le guidon, étoiles sur les rayons, ou encore crochet sur la selle, etc. Une seule règle : pas de règle !</p>
+              <p>Sur inscription, 8 places disponibles.</p>
+              <p>Matériel créatif fourni, viens avec ton vélo ou ton accessoire vélo à customiser.</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+
+
+    <!-- ========== 4. COMPTE À REBOURS ========== -->
+    <section class="compte-a-rebours">
+      <h2>Compte à rebours</h2>
+      <div class="compteur" id="compteur">
+        <div class="bloc"><span class="nombre" id="jours">00</span><span class="unite">jours</span></div>
+        <div class="bloc"><span class="nombre" id="heures">00</span><span class="unite">heures</span></div>
+        <div class="bloc"><span class="nombre" id="minutes">00</span><span class="unite">minutes</span></div>
+        <div class="bloc"><span class="nombre" id="secondes">00</span><span class="unite">secondes</span></div>
+      </div>
+      <p class="message-fin" id="message-fin" hidden>C'est parti ! 🚲</p>
+      <button class="bouton" id="bouton-reserver" type="button">S'inscrire à l'atelier</button>
+    </section>
+  </main>
+
+  <!-- ========== 5. PIED DE PAGE ========== -->
+  <footer>
+    <p>© 2026 Étage Voltaire </p>
+  </footer>
+
+  <!-- ========== FENÊTRE « EN SAVOIR PLUS » ========== -->
+      <!-- ========== FENÊTRE « EN SAVOIR PLUS » DES ÉVÉNEMENTS ========== -->
+  <dialog id="modale-evenement" class="modale modale-evenement">
+    <button class="fermer" type="button" aria-label="Fermer">×</button>
+    <div class="modale-image">
+      <img id="modale-photo" src="" alt="">
+      <h3 id="modale-titre"></h3>
+    </div>
+    <div class="modale-corps">
+      <p class="modale-date" id="modale-date"></p>
+      <div class="modale-texte" id="modale-texte"></div>
+    </div>
+  </dialog>
+<dialog id="modale-reservation" class="modale">
+    <button class="fermer" type="button" aria-label="Fermer">×</button>
+    <div class="modale-corps">
+      <h3 class="titre-formulaire">Atelier « Pimpe ton vélo »</h3>
+      <p class="modale-date">21 novembre, 14h · 8 places disponibles</p>
+      <form action="https://formspree.io/f/TON-IDENTIFIANT" method="POST">
+        <input type="hidden" name="evenement" value="Atelier Pimpe ton vélo – 21 novembre">
+
+        <label for="nom">Nom et prénom *</label>
+        <input id="nom" name="nom" type="text" required autocomplete="name">
+
+        <label for="email">E-mail *</label>
+        <input id="email" name="email" type="email" required autocomplete="email">
+
+        <button type="submit" class="bouton">M'inscrire</button>
+      </form>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
